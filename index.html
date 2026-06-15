@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laury Poueyou — Consultante Stratégie Digitale & Email Marketing</title>
+  <meta name="description" content="Je repère les angles morts qui vous coûtent des clients, des leads et du chiffre d'affaires. Audit stratégique, emailing, pilotage digital." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── TOKENS ─── */
+    :root {
+      --navy:       #0D2340;
+      --navy-mid:   #14325A;
+      --navy-light: #1B4278;
+      --yellow:     #F5E6A3;
+      --yellow-mid: #EDD96B;
+      --turquoise:  #3BBFBF;
+      --turquoise-light: #7DD8D8;
+      --white:      #FFFFFF;
+      --off-white:  #F7F9FB;
+      --text-body:  #E8EEF4;
+      --text-muted: #9BBAD4;
+      --font-display: 'Playfair Display', serif;
+      --font-body:    'Inter', sans-serif;
+      --radius:     12px;
+      --radius-lg:  24px;
+      --transition: 0.25s ease;
+    }
+
+    /* ─── RESET ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--navy);
+      color: var(--text-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 5%;
+      background: rgba(13, 35, 64, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(59, 191, 191, 0.15);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--yellow);
+      letter-spacing: 0.03em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--turquoise); }
+    .nav-cta {
+      background: var(--turquoise);
+      color: var(--navy) !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 50px;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: var(--turquoise-light) !important; color: var(--navy) !important; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 5% 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%; right: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(59,191,191,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -10%; left: -5%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(245,230,163,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 820px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--turquoise);
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(59,191,191,0.3);
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.18;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--yellow);
+    }
+    .hero-sub {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin-bottom: 1.2rem;
+      line-height: 1.8;
+    }
+    .hero-sub2 {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      border: none;
+    }
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--navy);
+    }
+    .btn-primary:hover {
+      background: var(--yellow-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(245,230,163,0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--turquoise);
+      border: 1.5px solid var(--turquoise);
+    }
+    .btn-outline:hover {
+      background: rgba(59,191,191,0.1);
+      transform: translateY(-2px);
+    }
+    .btn-contact {
+      background: var(--navy-mid);
+      color: var(--yellow);
+      border: 1.5px solid rgba(245,230,163,0.3);
+    }
+    .btn-contact:hover {
+      background: var(--navy-light);
+      border-color: var(--yellow);
+      transform: translateY(-2px);
+    }
+
+    /* ─── SECTIONS ─── */
+    section {
+      padding: 6rem 5%;
+    }
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--turquoise);
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+    h2 em {
+      font-style: normal;
+      color: var(--yellow);
+    }
+
+    /* ─── SECTION 1 — POURQUOI ─── */
+    .section-why {
+      background: var(--navy-mid);
+    }
+    .why-intro {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      max-width: 900px;
+    }
+    .why-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.2rem 1.5rem;
+      background: rgba(13,35,64,0.5);
+      border-radius: var(--radius);
+      border: 1px solid rgba(59,191,191,0.1);
+      transition: border-color var(--transition);
+    }
+    .why-item:hover { border-color: rgba(59,191,191,0.35); }
+    .why-cross {
+      color: #E05B5B;
+      font-size: 1.1rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .why-text { font-size: 0.95rem; color: var(--text-body); }
+
+    /* ─── SECTION 2 — ANALYSE ─── */
+    .section-analyse { background: var(--navy); }
+    .analyse-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .analyse-card {
+      background: var(--navy-mid);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid rgba(59,191,191,0.12);
+      transition: transform var(--transition), border-color var(--transition);
+    }
+    .analyse-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(59,191,191,0.35);
+    }
+    .analyse-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+    .icon-diag  { background: rgba(245,230,163,0.15); }
+    .icon-email { background: rgba(59,191,191,0.15); }
+    .icon-pilot { background: rgba(27,66,120,0.5); border: 1px solid rgba(59,191,191,0.2); }
+    .analyse-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .analyse-list {
+      list-style: none;
+    }
+    .analyse-list li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding: 0.35rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .analyse-list li::before {
+      content: '·';
+      color: var(--turquoise);
+      font-size: 1.4rem;
+      line-height: 0;
+    }
+    .analyse-list li:last-child { border-bottom: none; }
+    .section-cta { margin-top: 3rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ─── SECTION 3 — MÉTHODE ─── */
+    .section-methode { background: var(--navy-mid); }
+    .methode-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .methode-step {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: rgba(13,35,64,0.5);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(59,191,191,0.12);
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .methode-step:hover {
+      border-color: rgba(245,230,163,0.4);
+      transform: translateY(-4px);
+    }
+    .methode-icon {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 1.2rem;
+      background: rgba(59,191,191,0.1);
+      border: 2px solid rgba(59,191,191,0.25);
+    }
+    .methode-step h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      color: var(--yellow);
+      margin-bottom: 0.7rem;
+    }
+    .methode-step p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ─── SECTION 4 — TÉMOIGNAGES ─── */
+    .section-temoignages { background: var(--navy); }
+    .temoignages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .temoignage-card {
+      background: var(--navy-mid);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid rgba(245,230,163,0.1);
+      position: relative;
+      transition: border-color var(--transition);
+    }
+    .temoignage-card:hover { border-color: rgba(245,230,163,0.3); }
+    .quote-mark {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      line-height: 0.5;
+      color: var(--turquoise);
+      opacity: 0.4;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .temoignage-text {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      font-style: italic;
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+    }
+    .temoignage-author {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--yellow);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .temoignage-screenshot {
+      margin-top: 1rem;
+      background: rgba(13,35,64,0.6);
+      border: 1px dashed rgba(59,191,191,0.25);
+      border-radius: 8px;
+      padding: 0.8rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* ─── SECTION 5 — OFFRES ─── */
+    .section-offres { background: var(--navy-mid); }
+    .offres-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .offre-card {
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--transition);
+    }
+    .offre-card:hover { transform: translateY(-5px); }
+    .offre-diag {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border: 1.5px solid var(--turquoise);
+    }
+    .offre-email {
+      background: linear-gradient(135deg, #0A1E35 0%, #0D2340 100%);
+      border: 1.5px solid rgba(245,230,163,0.4);
+    }
+    .offre-pilotage {
+      background: linear-gradient(135deg, var(--navy-light) 0%, #0F2A4A 100%);
+      border: 1.5px solid rgba(59,191,191,0.5);
+    }
+    .offre-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.8rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+    .badge-diag   { background: rgba(59,191,191,0.2); color: var(--turquoise); }
+    .badge-email  { background: rgba(245,230,163,0.15); color: var(--yellow); }
+    .badge-pilot  { background: rgba(59,191,191,0.15); color: var(--turquoise-light); }
+    .offre-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .price-note { color: var(--yellow); font-size: 0.85rem; font-weight: 400; }
+    .offre-price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--yellow);
+      margin-bottom: 0.5rem;
+    }
+    .offre-price span { font-size: 0.85rem; font-weight: 400; color: var(--text-muted); }
+    .offre-ideal {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .offre-features {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+    .offre-features li {
+      font-size: 0.9rem;
+      color: var(--text-body);
+      padding: 0.4rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+    .offre-features li .check { color: var(--turquoise); font-size: 1rem; flex-shrink: 0; }
+    .offre-features li .dot   { color: var(--yellow-mid); font-size: 1.2rem; line-height: 0.9; flex-shrink: 0; }
+
+    /* ─── SECTION 6 — QUI SUIS-JE ─── */
+    .section-about { background: var(--navy); }
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+      max-width: 1000px;
+    }
+    .about-photo-wrap {
+      position: sticky;
+      top: 6rem;
+    }
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      border: 3px solid rgba(59,191,191,0.3);
+      filter: grayscale(10%);
+    }
+    .about-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--yellow);
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .about-role {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 0.3rem;
+    }
+    .about-text p {
+      font-size: 0.97rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+    }
+    .about-text p:last-of-type { margin-bottom: 2rem; }
+    .about-highlight {
+      background: rgba(59,191,191,0.08);
+      border-left: 3px solid var(--turquoise);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .about-highlight p {
+      color: var(--text-body) !important;
+      margin-bottom: 0 !important;
+      font-size: 0.95rem !important;
+    }
+
+    /* ─── FAQ ─── */
+    .section-faq { background: var(--navy-mid); }
+    .faq-list { max-width: 760px; margin-top: 3rem; }
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.98rem;
+      font-weight: 500;
+      text-align: left;
+      padding: 1.3rem 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      transition: color var(--transition);
+    }
+    .faq-question:hover { color: var(--turquoise); }
+    .faq-arrow {
+      color: var(--turquoise);
+      font-size: 1.2rem;
+      transition: transform var(--transition);
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(45deg); }
+    .faq-answer {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      padding-bottom: 1.3rem;
+    }
+
+    /* ─── FORMULAIRE ─── */
+    .section-form { background: var(--navy); }
+    .form-wrap {
+      max-width: 600px;
+      background: var(--navy-mid);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      border: 1px solid rgba(59,191,191,0.15);
+    }
+    .form-eyebrow {
+      font-size: 0.8rem;
+      color: var(--turquoise);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .form-wrap h2 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .form-wrap p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 0.4rem;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(13,35,64,0.6);
+      border: 1px solid rgba(59,191,191,0.2);
+      border-radius: var(--radius);
+      padding: 0.8rem 1rem;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      transition: border-color var(--transition);
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--turquoise); }
+    .form-group textarea { min-height: 110px; resize: vertical; }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(155,186,212,0.5); }
+    .form-submit {
+      width: 100%;
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #080F1A;
+      padding: 2.5rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-top: 1px solid rgba(59,191,191,0.1);
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--yellow);
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .footer-links a:hover { color: var(--turquoise); }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: rgba(155,186,212,0.4);
+    }
+
+    /* ─── DIVIDER ─── */
+    .cta-band {
+      background: var(--navy-mid);
+      padding: 2.5rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(59,191,191,0.1);
+      border-bottom: 1px solid rgba(59,191,191,0.1);
+    }
+    .cta-band p {
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+    .cta-band strong { color: var(--white); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 4%; }
+      .nav-links { display: none; }
+      section { padding: 4rem 4%; }
+      .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .about-photo-wrap { position: static; }
+      .about-photo { max-width: 220px; margin: 0 auto; display: block; }
+      .form-wrap { padding: 2rem 1.5rem; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-logo">Laury Poueyou</span>
+    <ul class="nav-links">
+      <li><a href="#pourquoi">Pourquoi</a></li>
+      <li><a href="#analyse">Ce que j'analyse</a></li>
+      <li><a href="#methode">Méthode</a></li>
+      <li><a href="#offres">Offres</a></li>
+      <li><a href="#about">Qui suis-je</a></li>
+      <li><a href="#contact" class="nav-cta">Me contacter</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <span class="hero-eyebrow">Stratégie digitale & email marketing</span>
+      <h1>Je repère les <em>angles morts</em> qui vous coûtent des clients, des leads et du chiffre d'affaires.</h1>
+      <p class="hero-sub">Votre site, vos emails et votre présence digitale laissent peut-être passer des <strong>opportunités</strong> que vous ne voyez plus.</p>
+      <p class="hero-sub2">J'aide les e-commerces, infopreneurs et petites entreprises à prendre du recul sur leur communication, identifier leurs priorités et construire une croissance plus durable.</p>
+      <div class="hero-ctas">
+        <a href="#offres" class="btn btn-primary">Découvrir mon approche →</a>
+        <a href="#contact" class="btn btn-outline">Me contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1 — POURQUOI -->
+  <section class="section-why" id="pourquoi">
+    <h2>Pourquoi les entreprises <em>stagnent</em> ?</h2>
+    <p class="why-intro">Le problème n'est pas toujours le trafic. Très souvent, les <strong>opportunités</strong> sont déjà là, mais elles restent <strong>invisibles</strong>.</p>
+    <div class="why-grid">
+      <div class="why-item"><span class="why-cross">✕</span><span class="why-text">Un site qui ne rassure pas</span></div>
+      <div class="why-item"><span class="why-cross">✕</span><span class="why-text">Une proposition de valeur floue (USP)</span></div>
+      <div class="why-item"><span class="why-cross">✕</span><span class="why-text">Une page stratégique oubliée</span></div>
+      <div class="why-item"><span class="why-cross">✕</span><span class="why-text">Des visiteurs qui partent sans laisser leurs coordonnées</span></div>
+      <div class="why-item"><span class="why-cross">✕</span><span class="why-text">Une base email qui dort</span></div>
+      <div class="why-item"><span class="why-cross">✕</span><span class="why-text">Un parcours client qui crée de la friction</span></div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 — ANALYSE -->
+  <section class="section-analyse" id="analyse">
+    <h2>Ce que <em>j'analyse</em></h2>
+    <div class="analyse-grid">
+      <div class="analyse-card">
+        <h3>Diagnostic stratégique</h3>
+        <ul class="analyse-list">
+          <li>Site web</li>
+          <li>Parcours client</li>
+          <li>Proposition de valeur</li>
+          <li>Visibilité</li>
+          <li>Preuves de confiance</li>
+          <li>Expérience utilisateur</li>
+        </ul>
+      </div>
+      <div class="analyse-card">
+        <h3>Écosystème emailing</h3>
+        <ul class="analyse-list">
+          <li>Capture de leads</li>
+          <li>Séquences</li>
+          <li>Newsletters</li>
+          <li>Fidélisation</li>
+          <li>Réactivation</li>
+        </ul>
+      </div>
+      <div class="analyse-card">
+        <h3>Pilotage et optimisation</h3>
+        <ul class="analyse-list">
+          <li>Priorités</li>
+          <li>Quick wins</li>
+          <li>Roadmap 90 jours</li>
+          <li>Suivi</li>
+          <li>Amélioration continue</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="mailto:laury.poueyou@gmail.com" class="btn btn-primary">Me contacter →</a>
+    </div>
+  </section>
+
+  <!-- SECTION 3 — MÉTHODE -->
+  <section class="section-methode" id="methode">
+    <h2>Ma <em>méthode</em></h2>
+    <div class="methode-steps">
+      <div class="methode-step">
+        <div class="methode-icon">👁</div>
+        <h3>Observer</h3>
+        <p>Je regarde votre activité avec un œil extérieur, sans parti pris et sans filtre.</p>
+      </div>
+      <div class="methode-step">
+        <div class="methode-icon">🎯</div>
+        <h3>Prioriser</h3>
+        <p>Je distingue ce qui est urgent de ce qui est secondaire pour concentrer l'énergie là où ça compte.</p>
+      </div>
+      <div class="methode-step">
+        <div class="methode-icon">🏗</div>
+        <h3>Construire</h3>
+        <p>Je transforme les constats en plan d'action concret, adapté à votre réalité et vos ressources.</p>
+      </div>
+      <div class="methode-step">
+        <div class="methode-icon">📈</div>
+        <h3>Optimiser</h3>
+        <p>On mesure, on ajuste et on améliore — en continu, pas en une seule fois.</p>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="mailto:laury.poueyou@gmail.com" class="btn btn-primary">Me contacter →</a>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — TÉMOIGNAGES -->
+  <section class="section-temoignages" id="temoignages">
+    <h2>Ce que disent <em>mes clients</em></h2>
+    <div class="temoignages-grid">
+      <div class="temoignage-card">
+        <span class="quote-mark">"</span>
+        <p class="temoignage-text">Elle identifie les angles morts qu'on ne voit plus à force d'être dans le quotidien.</p>
+        <div class="temoignage-author">— Éric, fondateur de Wileo</div>
+        <div class="temoignage-screenshot">📸 Capture d'écran à ajouter</div>
+      </div>
+      <div class="temoignage-card">
+        <span class="quote-mark">"</span>
+        <p class="temoignage-text">L'audit m'a permis de prendre du recul sur la visibilité du site et certains axes de développement commercial.</p>
+        <div class="temoignage-author">— Jean-Baptiste Chokré, artisan chocolatier</div>
+        <div class="temoignage-screenshot">📸 Capture d'écran à ajouter</div>
+      </div>
+      <div class="temoignage-card">
+        <span class="quote-mark">"</span>
+        <p class="temoignage-text">Son analyse poussée permet d'obtenir des résultats allant au-delà des attentes initiales.</p>
+        <div class="temoignage-author">— Laure Etienney, avocate</div>
+        <div class="temoignage-screenshot">📸 Capture d'écran à ajouter</div>
+      </div>
+      <div class="temoignage-card">
+        <span class="quote-mark">"</span>
+        <p class="temoignage-text">Certains mails sont passés de 15 % à 55 % d'ouverture.</p>
+        <div class="temoignage-author">— Régine Jordan, thérapeute</div>
+        <div class="temoignage-screenshot">📸 Capture d'écran à ajouter</div>
+      </div>
+      <div class="temoignage-card">
+        <span class="quote-mark">"</span>
+        <p class="temoignage-text">Vision globale et croissance.</p>
+        <div class="temoignage-author">— Delphine, coach business</div>
+        <div class="temoignage-screenshot">📸 Capture d'écran à ajouter</div>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="mailto:laury.poueyou@gmail.com" class="btn btn-primary">Me contacter →</a>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — OFFRES -->
+  <section class="section-offres" id="offres">
+    <h2>Mes <em>offres</em></h2>
+    <div class="offres-grid">
+      <!-- Diagnostic -->
+      <div class="offre-card offre-diag">
+        <span class="offre-badge badge-diag">Diagnostic</span>
+        <h3>Diagnostic Stratégique</h3>
+        <div class="offre-price">500 €</div>
+        <p class="offre-ideal">Idéal si vous avez le sentiment que quelque chose bloque, sans savoir précisément quoi.</p>
+        <ul class="offre-features">
+          <li><span class="check">✔</span> Audit complet de votre présence digitale</li>
+          <li><span class="check">✔</span> Identification des angles morts</li>
+          <li><span class="check">✔</span> Priorisation des problèmes</li>
+          <li><span class="check">✔</span> Quick wins</li>
+          <li><span class="check">✔</span> Roadmap d'action sur 90 jours</li>
+        </ul>
+        <a href="mailto:laury.poueyou@gmail.com?subject=Diagnostic Stratégique" class="btn btn-primary">Me contacter →</a>
+      </div>
+      <!-- Emailing -->
+      <div class="offre-card offre-email">
+        <span class="offre-badge badge-email">Emailing</span>
+        <h3>Écosystème Emailing</h3>
+        <div class="offre-price">Sur devis <span class="price-note">(selon le projet)</span></div>
+        <p class="offre-ideal">Chaque projet étant unique, le périmètre et l'investissement sont définis en fonction de vos besoins.</p>
+        <ul class="offre-features">
+          <li><span class="dot">·</span> Newsletter</li>
+          <li><span class="dot">·</span> Séquence de bienvenue</li>
+          <li><span class="dot">·</span> Lead magnet</li>
+          <li><span class="dot">·</span> Réactivation</li>
+          <li><span class="dot">·</span> Refonte complète…</li>
+        </ul>
+        <a href="mailto:laury.poueyou@gmail.com?subject=Écosystème Emailing" class="btn btn-contact">Me contacter →</a>
+      </div>
+      <!-- Pilotage -->
+      <div class="offre-card offre-pilotage">
+        <span class="offre-badge badge-pilot">Accompagnement</span>
+        <h3>Pilotage Stratégique 3 mois</h3>
+        <div class="offre-price">Sur devis <span class="price-note">(selon le périmètre)</span></div>
+        <p class="offre-ideal">Un accompagnement personnalisé pour transformer les constats en croissance durable.</p>
+        <ul class="offre-features">
+          <li><span class="check">✔</span> Priorisation des actions</li>
+          <li><span class="check">✔</span> Accompagnement à la mise en œuvre</li>
+          <li><span class="check">✔</span> Suivi et ajustements</li>
+          <li><span class="check">✔</span> Coordination avec d'autres experts</li>
+        </ul>
+        <a href="mailto:laury.poueyou@gmail.com?subject=Pilotage Stratégique" class="btn btn-outline">Me contacter →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6 — QUI SUIS-JE -->
+  <section class="section-about" id="about">
+    <div class="about-inner">
+      <div class="about-photo-wrap">
+        <img src="photo.jpg" alt="Laury Poueyou — Consultante Stratégie Digitale" class="about-photo" />
+        <div class="about-name">Laury Poueyou</div>
+        <div class="about-role">Consultante Stratégie Digitale & Email Marketing</div>
+      </div>
+      <div class="about-text">
+        <h2>Qui <em>suis-je</em> ?</h2>
+        <p>Je suis Laury, consultante en stratégie digitale et email marketing, formée au sein de CopyHouse (Mastermind de Charles Baras, CMO d'Eric Larchevêque). Aujourd'hui, j'aide les e-commerces, les infopreneurs et les petites entreprises à identifier ces angles morts, à les prioriser et à les transformer en actions concrètes.</p>
+        <p>Mais avant cela, j'étais professeure d'histoire en lycée. Raconter, transmettre et captiver fait partie de mon ADN. Observer, analyser et faire émerger ce que d'autres ne voient pas faisait déjà partie de mon quotidien.</p>
+        <p>Avec le temps, je me suis rendu compte que beaucoup d'entreprises laissaient passer des opportunités simplement parce qu'elles avaient le nez dans le guidon.</p>
+        <div class="about-highlight">
+          <p>J'ai aussi fait un autre constat : beaucoup d'entreprises se retrouvent à multiplier les prestataires. Un freelance pour le site. Un autre pour les emails. Une agence pour la publicité. Résultat : les actions sont souvent déconnectées les unes des autres et personne n'a une vision d'ensemble.</p>
+        </div>
+        <p>Mon approche est différente. Je travaille comme un interlocuteur stratégique unique, avec une vision à 360° de votre activité, pour identifier les priorités et construire un système cohérent, adapté à votre réalité et à vos ressources.</p>
+        <div class="section-cta" style="margin-top:2rem;">
+          <a href="mailto:laury.poueyou@gmail.com" class="btn btn-primary">Me contacter →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-faq" id="faq">
+    <h2>Vos <em>questions</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">À qui s'adresse cet accompagnement ? <span class="faq-arrow">+</span></button>
+        <div class="faq-answer">Il s'adresse aux e-commerces, infopreneurs et petites entreprises qui souhaitent prendre du recul sur leur communication et mieux structurer leur croissance.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Est-ce que vous travaillez uniquement sur l'emailing ? <span class="faq-arrow">+</span></button>
+        <div class="faq-answer">Non. L'emailing fait partie de l'écosystème, mais j'interviens également sur le parcours client, le SEO, la stratégie de contenu, les lead magnets, la conversion, la fidélisation, les priorités de croissance, etc. Mon approche est globale.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Combien de temps faut-il pour voir des résultats ? <span class="faq-arrow">+</span></button>
+        <div class="faq-answer">Certaines améliorations peuvent produire des effets dès les premières semaines. D'autres demandent plusieurs mois. Tout dépend de votre situation de départ, des priorités identifiées et des actions mises en place.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Je sais que quelque chose bloque mais je ne sais pas quoi. <span class="faq-arrow">+</span></button>
+        <div class="faq-answer">Il est souvent difficile de prendre du recul sur sa propre activité lorsqu'on est plongé dans l'opérationnel. Mon rôle est de vous apporter ce regard extérieur.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Je débute mon activité. Est-ce le bon moment ? <span class="faq-arrow">+</span></button>
+        <div class="faq-answer">Oui, mais les priorités ne seront pas les mêmes. Une entreprise qui démarre n'a pas les mêmes besoins qu'une entreprise installée depuis dix ans. L'objectif est de mettre en place les actions qui auront le plus d'impact à votre stade de développement.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Est-ce que vous faites les choses à ma place ? <span class="faq-arrow">+</span></button>
+        <div class="faq-answer">Selon les besoins, je peux intervenir comme consultante stratégique, vous accompagner dans la mise en œuvre ou piloter certains projets avec vous.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Pourquoi travailler avec vous plutôt qu'avec une agence ? <span class="faq-arrow">+</span></button>
+        <div class="faq-answer">Vous bénéficiez d'un interlocuteur unique avec une vision d'ensemble de votre activité, capable de relier stratégie, acquisition, conversion et fidélisation.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Et s'il n'y a finalement rien à améliorer ? <span class="faq-arrow">+</span></button>
+        <div class="faq-answer">Il existe toujours des opportunités de simplification, d'optimisation ou de priorisation. L'objectif n'est pas de tout changer, mais de concentrer les efforts là où ils auront le plus d'impact.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULAIRE -->
+  <section class="section-form" id="contact">
+    <div class="form-wrap">
+      <div class="form-eyebrow">Pas encore prêt à échanger ?</div>
+      <h2>Recevez une <em>première orientation</em></h2>
+      <p>Décrivez votre principal défi et je vous réponds avec quelques pistes concrètes.</p>
+      <form action="https://formsubmit.co/laury.poueyou@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nouvelle demande depuis votre site vitrine" />
+        <input type="hidden" name="_captcha" value="false" />
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="site">Site web</label>
+          <input type="url" id="site" name="site" placeholder="https://votresite.com" />
+        </div>
+        <div class="form-group">
+          <label for="defi">Votre principal défi aujourd'hui</label>
+          <textarea id="defi" name="defi" placeholder="Décrivez votre situation, ce qui bloque ou ce que vous aimeriez améliorer…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">Recevoir une première orientation →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Laury Poueyou</span>
+    <span class="footer-copy">© 2026 Laury Poueyou — Tous droits réservés</span>
+  </footer>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
